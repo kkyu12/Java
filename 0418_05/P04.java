@@ -9,6 +9,8 @@ public class P04 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		// 영수증 출력 1
+		//
 		Scanner k27_sc = new Scanner(System.in); // 가격을 직접 받기위해 인스턴스함
 		System.out.printf("가격을 입력해주세요 => ");
 		int k27_iPrice = k27_sc.nextInt(); // 가격을 직접 받아오기
@@ -29,26 +31,29 @@ public class P04 {
 		System.out.printf("1층\n");
 		System.out.printf("대표자 : 유창신\n");
 		System.out.printf("사업자 : 752-53-00558 %24s\n", "TEL : 7055695");
-		System.out.printf(" - - - - - - - - - - - - - - - - - - - - - - -\n");
-		System.out.printf("금  액 %37s원\n", k27_df.format(k27_bfPrice));
+		k27_line_print();
+		System.out.printf("금  액 %35s  원\n", k27_df.format(k27_bfPrice));
 		// 세자리마다 쉼표처리된 세전가격 출력
-		System.out.printf("부가세 %37s원\n", k27_df.format(k27_tax));
+		System.out.printf("부가세 %35s  원\n", k27_df.format(k27_tax));
 		// 세자리마다 쉼표처리된 부가세 출력
-		System.out.printf("합  계 %37s원\n", k27_df.format(k27_iPrice));
+		System.out.printf("합  계 %35s  원\n", k27_df.format(k27_iPrice));
 		// 세자리마다 쉼표처리된 총가격 출력
-		System.out.printf(" - - - - - - - - - - - - - - - - - - - - - - -\n");
+		k27_line_print();
 		System.out.printf("우리카드\n");
 		System.out.printf("카드번호 : 5387-20**-****4613(S)%11s\n", "일시불");
 		System.out.printf("거래일시 : %s\n", k27_sdt.format(k27_calt.getTime()));
 		// 현재 시간을 포맷에 맞게 출력
 		System.out.printf("승인번호 : 70404427\n");
 		System.out.printf("거래번호 : 357734873739\n");
-		System.out.printf("매입 : 비씨카드사 %20s \n", "가맹 : 720068568");
+		System.out.printf("매입 : 비씨카드사 %19s \n", "가맹 : 720068568");
 		System.out.printf("알림 : EDC매출표\n");
 		System.out.printf("문의 : TEL)1544-4700\n");
-		System.out.printf(" - - - - - - - - - - - - - - - - - - - - - - -\n");
-		System.out.printf("%26s\n", "* 감사합니다 *");
-		System.out.printf("%44s", "표준V2. 08_20200212");
+		k27_line_print();
+		System.out.printf("%26s\n", "★ 감사합니다 ★");
+		System.out.printf("%45s", "표준V2.08_20200212");
+	}
+	public static void k27_line_print() { // 줄을 출력하는 메소드 추가
+		System.out.printf("- - - - - - - - - - - - - - - - - - - - - - - \n");
 	}
 
 }
